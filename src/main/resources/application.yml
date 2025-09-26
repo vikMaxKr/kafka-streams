@@ -1,0 +1,50 @@
+spring:
+  kafka:
+    bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+    schema-registry-url: https://psrc-zj77nmo.us-east1.gcp.confluent.cloud
+topic.name: avro-employee
+log:
+  level=DEBUG:
+
+  application:
+    name: kafka-streams-producer
+
+  kafka:
+    bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+    streams:
+      application-id: streams-producer-app
+      bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+
+app:
+  topic:
+    input: input-topic
+    output: output-topic
+
+
+basic:
+  input:
+    topic: basic1-input-streams
+  output:
+    topic: basic1-output-streams
+
+
+
+
+
+#sasl.mechanism=PLAIN
+#security.protocol=SASL_SSL
+#sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='RTZ2EQDGTN73EJGI' password='cfltO9757PnG3uXggXbQgY5By30QBqV2O5csbaHp3oKN1MRBsh9SOi/c9u1UMBOA';
+#
+#basic.auth.credentials.source=USER_INFO
+#basic.auth.user.info=F6EUNWPZVXZDZYHW:cfltPCvxTCJL1N8rpyHwYo/egzM73H71QZo9o5xuKIU3hcq2NJqd+DqkWcuPNx2w
+
+# Required connection configs for Kafka producer, consumer, and admin
+#spring.kafka.properties.sasl.mechanism=PLAIN
+#spring.kafka.bootstrap-servers=pkc-921jm.us-east-2.aws.confluent.cloud:9092
+#spring.kafka.properties.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='{{ CLUSTER_API_KEY }}' password='{{ CLUSTER_API_SECRET }}';
+#spring.kafka.properties.security.protocol=SASL_SSL
+#
+## Best practice for higher availability in Apache Kafka clients prior to 3.0
+#spring.kafka.properties.session.timeout.ms=45000
+#
+#client.id=ccloud-springboot-client-d4912acc-db56-498c-bf83-edb4f1067e79
